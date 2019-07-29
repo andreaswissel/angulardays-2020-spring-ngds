@@ -2,7 +2,7 @@
 
 [Angular Days Workshop](https://javascript-days.de/angular/robuste-design-systems-mit-storybook-und-angular-vom-konzept-zur-lebendigen-anwendung/), Tuesday 8th October 2019 
 
-Your trainers: [Christian Liebel](https://twitter.com/christianliebel), Thinktecture. [Andreas Wissel](https://twitter.com/andreas_wissel),  
+Your trainers: [Christian Liebel](https://twitter.com/christianliebel), Thinktecture. [Andreas Wissel](https://twitter.com/andreas_wissel)
 
 ## Setup
 
@@ -28,6 +28,9 @@ Please bring your developer devices and install the following software. [Already
   - [WebStorm](https://www.jetbrains.com/webstorm/) 2018.1 (commercial, free trial)
   - [Visual Studio Code](https://code.visualstudio.com/), recent version
   - Notepad, vi, …
+  
+#### Designer Tools
+- Create a free account at [Figma](https://figma.com)
 
 ### Step 2: Demo Repository
 
