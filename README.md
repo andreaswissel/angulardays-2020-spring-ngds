@@ -2,7 +2,7 @@
 
 [Angular Days Workshop](https://javascript-days.de/angular/robuste-design-systems-mit-storybook-und-angular-vom-konzept-zur-lebendigen-anwendung/), Tuesday 8th October 2019 
 
-Your trainers: [Christian Liebel](https://twitter.com/chris_liebel), Thinktecture. [Andreas Wissel](https://twitter.com/andreas_wissel),  
+Your trainers: [Christian Liebel](https://twitter.com/christianliebel), Thinktecture. [Andreas Wissel](https://twitter.com/andreas_wissel),  
 
 ## Setup
 
