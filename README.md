@@ -16,18 +16,19 @@ Please bring your developer devices and install the following software. [Already
 
 #### Devices
 - Laptop with recent Windows/macOS/Linux version
+  - Make sure you can access the Internet without any proxies and install software without group policies etc.
+  - When in doubt, use your private notebook.
 
 #### Browsers (Desktop)
-- [Google Chrome](https://www.google.de/chrome/browser/desktop/), version 68 or later
+- [Google Chrome](https://www.google.de/chrome/browser/desktop/), version 75 or later
 
 #### Developer Tools
 - [Git](https://git-scm.com/)
   - Optional: Git UI tool such as TortoiseGit, Tower, SourceTree, GitKraken, …
 - [Node.js](https://nodejs.org/en/), version 10.16.0 LTS
 - Editor of your choice
-  - [WebStorm](https://www.jetbrains.com/webstorm/) 2018.1 (commercial, free trial)
+  - [WebStorm](https://www.jetbrains.com/webstorm/) 2019.2 (commercial, free trial)
   - [Visual Studio Code](https://code.visualstudio.com/), recent version
-  - Notepad, vi, …
   
 #### Designer Tools
 - Create a free account at [Figma](https://figma.com)
@@ -45,9 +46,8 @@ npm install -g @angular/cli@8.1.2 @storybook/cli@5.1.9
 Next, navigate to a folder of your choice and execute:
 
 ```
-git clone https://github.com/thinktecture/angulardays-2019-herbst-design-systems/
+git clone https://github.com/thinktecture/angulardays-2019-herbst-design-systems.git
 cd angulardays-2019-herbst-design-systems
-npm install   # or yarn install (if installed)
 ```
 
 If you prefer SSH, you can use this checkout URL: `git@github.com:thinktecture/angulardays-2019-herbst-design-systems.git`
