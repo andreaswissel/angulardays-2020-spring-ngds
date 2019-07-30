@@ -38,7 +38,7 @@ Please bring your developer devices and install the following software. [Already
 On your favorite terminal, please run:
 
 ```
-npm uninstall -g angular-cli @angular/cli @storybook/cli
+npm uninstall -g @angular/cli @storybook/cli
 npm cache verify
 npm install -g @angular/cli@8.1.2 @storybook/cli@5.1.9 
 ```
