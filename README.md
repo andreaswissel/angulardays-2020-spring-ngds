@@ -32,6 +32,7 @@ Please bring your developer devices and install the following software. [Already
   
 #### Designer Tools
 - Create a free account at [Figma](https://figma.com)
+- Create a free account at [Percy](https://percy.io)
 
 ### Step 2: Demo Repository
 
