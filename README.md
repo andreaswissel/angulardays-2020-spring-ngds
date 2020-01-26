@@ -1,8 +1,8 @@
 # Robuste Design Systems mit Storybook und Angular: vom Konzept zur lebendigen Anwendung
 
-[Angular Days Workshop](https://javascript-days.de/angular/robuste-design-systems-mit-storybook-und-angular-vom-konzept-zur-lebendigen-anwendung/), Tuesday 8th October 2019 
+[Angular Days Workshop](https://javascript-days.de/angular/robuste-design-systems-mit-storybook-und-angular-vom-konzept-zur-lebendigen-anwendung/), Thursday September 3 2020 
 
-Your trainers: [Christian Liebel](https://twitter.com/christianliebel), Thinktecture. [Andreas Wissel](https://twitter.com/andreas_wissel)
+Your trainers: [Andreas Wissel](https://twitter.com/andreas_wissel), INNOQ
 
 ## Setup
 
@@ -20,14 +20,14 @@ Please bring your developer devices and install the following software. [Already
   - When in doubt, use your private notebook.
 
 #### Browsers (Desktop)
-- [Google Chrome](https://www.google.de/chrome/browser/desktop/), version 75 or later
+- [Google Chrome](https://www.google.de/chrome/browser/desktop/), version 7579 or later
 
 #### Developer Tools
 - [Git](https://git-scm.com/)
   - Optional: Git UI tool such as TortoiseGit, Tower, SourceTree, GitKraken, …
-- [Node.js](https://nodejs.org/en/), version 10.16.0 LTS
+- [Node.js](https://nodejs.org/en/), version 12.14.1 LTS
 - Editor of your choice
-  - [WebStorm](https://www.jetbrains.com/webstorm/) 2019.2 (commercial, free trial)
+  - [WebStorm](https://www.jetbrains.com/webstorm/) 2019.3 (commercial, free trial)
   - [Visual Studio Code](https://code.visualstudio.com/), recent version
   
 #### Designer Tools
@@ -41,7 +41,7 @@ On your favorite terminal, please run:
 ```
 npm uninstall -g @angular/cli @storybook/cli
 npm cache verify
-npm install -g @angular/cli@8.1.2 @storybook/cli@5.1.9 
+npm install -g @angular/cli@8.1.2 @storybook/cli@5.1.9  
 ```
 
 Next, navigate to a folder of your choice and execute:
