@@ -1,16 +1,16 @@
 import {ButtonComponent} from './button.component';
 
+export default {
+  title: 'Components/Button',
+  component: ButtonComponent
+};
+
 const Template = (args: ButtonComponent) => ({
   component: ButtonComponent,
   props: args,
 });
 
-export default {
-  title: 'Components/Button'
-};
-
 export const Default = Template.bind({});
-
 Default.args = {
   label: 'Submit',
   bgColor: '#0085FC',
@@ -23,10 +23,10 @@ Default.argTypes = {
   },
   bgColor: {
     name: 'Background Color',
-    control: 'color'
+      control: 'color'
   },
   fontSize: {
     name: 'Font Size',
-    control: { type: 'range', min: 8, max: 20 }
+      control: {type: 'range', min: 8, max: 20}
   }
 };

@@ -34,6 +34,7 @@
     "@babel/core": "^7.11.4",
     "@compodoc/compodoc": "^1.1.11",
     "@storybook/addon-actions": "^6.0.21",
+    "@storybook/addon-docs": "^6.0.21",
     "@storybook/addon-essentials": "^6.0.21",
     "@storybook/addon-links": "^6.0.21",
     "@storybook/angular": "^6.0.21",
