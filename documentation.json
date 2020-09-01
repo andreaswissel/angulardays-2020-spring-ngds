@@ -162,21 +162,21 @@
             "templateData": "<button [ngStyle]=\"{ 'background-color': bgColor, 'font-size': fontSize + 'px' }\">{{ label }}</button>\n"
         },
         {
-            "name": "InputComponent",
-            "id": "component-InputComponent-0251cb05a5612c02e04e84ecb23ac4bc",
-            "file": "src/app/input/input.component.ts",
+            "name": "FormGroupComponent",
+            "id": "component-FormGroupComponent-0e5de414d6993153b320ca8f90041119",
+            "file": "src/app/form-group/form-group.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-input",
+            "selector": "app-form-group",
             "styleUrls": [
-                "./input.component.scss"
+                "./form-group.component.scss"
             ],
             "styles": [],
             "templateUrl": [
-                "./input.component.html"
+                "./form-group.component.html"
             ],
             "viewProviders": [],
             "inputsClass": [],
@@ -197,12 +197,12 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-input',\n  templateUrl: './input.component.html',\n  styleUrls: ['./input.component.scss']\n})\nexport class InputComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-form-group',\n  templateUrl: './form-group.component.html',\n  styleUrls: ['./form-group.component.scss']\n})\nexport class FormGroupComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
                     "data": "",
-                    "styleUrl": "./input.component.scss"
+                    "styleUrl": "./form-group.component.scss"
                 }
             ],
             "stylesData": "",
@@ -215,7 +215,104 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>input works!</p>\n"
+            "templateData": "<p>form-group works!</p>\n"
+        },
+        {
+            "name": "InputComponent",
+            "id": "component-InputComponent-9a05c01eac84ae0a90492ba5ec44f89e",
+            "file": "src/app/input/input.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-input",
+            "styleUrls": [
+                "./input.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./input.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "line": 9,
+                    "type": "string"
+                },
+                {
+                    "name": "placeholder",
+                    "line": 10,
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "line": 11,
+                    "type": "\"text\" | \"password\""
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "input",
+                    "type": "ElementRef<HTMLInputElement>",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'input', {static: false}"
+                        }
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';\n\n@Component({\n  selector: 'app-input',\n  templateUrl: './input.component.html',\n  styleUrls: ['./input.component.scss']\n})\nexport class InputComponent implements OnInit {\n  @Input() label: string;\n  @Input() placeholder: string;\n  @Input() type: 'text' | 'password';\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  @ViewChild('input', { static: false }) input: ElementRef<HTMLInputElement>;\n\n  get text(): string {\n    return this.input.nativeElement.value;\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  display: flex;\n  flex-direction: column;\n  font-family: \"SF Pro Display\", Helvetica, Arial, sans-serif;\n  font-size: 13px;\n  line-height: 16px;\n}\n\nlabel {\n  font-weight: 600;\n  color: #041C31;\n  margin-bottom: 8px;\n}\n\ninput {\n  border: 1px solid #E4E8F3;\n  box-sizing: border-box;\n  border-radius: 10px;\n  padding: 12px;\n  outline: none;\n}\n\n::placeholder {\n  color: #9BA1B4;\n  opacity: 1;\n}\n",
+                    "styleUrl": "./input.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 11
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "text": {
+                    "name": "text",
+                    "getSignature": {
+                        "name": "text",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 20
+                    }
+                }
+            },
+            "templateData": "<label>{{ label }}</label>\n<input #input [type]=\"type\" [placeholder]=\"placeholder\">\n"
         }
     ],
     "modules": [
@@ -290,6 +387,39 @@
             ]
         },
         {
+            "name": "FormGroupModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FormGroupComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "InputModule",
             "children": [
                 {
@@ -342,6 +472,22 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/form-group/form-group.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\n  component: FormGroupComponent\n})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/input/input.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -371,6 +517,14 @@
                 "file": "src/app/button/button.stories.ts",
                 "type": "",
                 "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/input/input.stories.ts",
+                "type": "",
+                "defaultValue": "(args: InputComponent) => ({\n  component: InputComponent,\n  props: args,\n})"
             }
         ],
         "functions": [],
@@ -412,6 +566,34 @@
                     "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
                 }
             ],
+            "src/app/form-group/form-group.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/form-group/form-group.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n  component: FormGroupComponent\n})"
+                }
+            ],
+            "src/app/input/input.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/input/input.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/input/input.stories.ts",
+                    "type": "",
+                    "defaultValue": "(args: InputComponent) => ({\n  component: InputComponent,\n  props: args,\n})"
+                }
+            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -439,7 +621,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 6,
+        "count": 4,
         "status": "low",
         "files": [
             {
@@ -490,12 +672,51 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/form-group/form-group.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FormGroupComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/form-group/form-group.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/input/input.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "InputComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/input/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/input/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

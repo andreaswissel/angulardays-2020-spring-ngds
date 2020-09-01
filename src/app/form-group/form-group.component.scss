@@ -1,0 +1,17 @@
+.form-group {
+  display: grid;
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
+}
+
+legend {
+  font-family: "SF Pro Display", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: #000000;
+
+  margin-bottom: 24px;
+}
