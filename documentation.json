@@ -1,7 +1,52 @@
 {
     "pipes": [],
     "interfaces": [],
-    "injectables": [],
+    "injectables": [
+        {
+            "name": "LoginService",
+            "id": "injectable-LoginService-d36a5912b3fa0a008c857331f620aea9",
+            "file": "src/app/login/login.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "login",
+                    "args": [
+                        {
+                            "name": "username",
+                            "type": "string"
+                        },
+                        {
+                            "name": "password",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<boolean>",
+                    "typeParameters": [],
+                    "line": 8,
+                    "jsdoctags": [
+                        {
+                            "name": "username",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "password",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "description": "",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { Observable, throwError } from 'rxjs';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class LoginService {\n  login(username: string, password: string): Observable<boolean> {\n    return throwError('Not implemented.');\n  }\n}\n",
+            "type": "injectable"
+        }
+    ],
     "classes": [
         {
             "name": "AppPage",
@@ -163,7 +208,7 @@
         },
         {
             "name": "FormGroupComponent",
-            "id": "component-FormGroupComponent-0e5de414d6993153b320ca8f90041119",
+            "id": "component-FormGroupComponent-9a6d1907f715811431c2751c63b0af95",
             "file": "src/app/form-group/form-group.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -179,7 +224,18 @@
                 "./form-group.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "columns",
+                    "defaultValue": "2",
+                    "line": 10
+                },
+                {
+                    "name": "heading",
+                    "line": 9,
+                    "type": "string"
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [
@@ -189,7 +245,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 12
+                    "line": 14
                 }
             ],
             "hostBindings": [],
@@ -197,11 +253,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-form-group',\n  templateUrl: './form-group.component.html',\n  styleUrls: ['./form-group.component.scss']\n})\nexport class FormGroupComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\n\n@Component({\n  selector: 'app-form-group',\n  templateUrl: './form-group.component.html',\n  styleUrls: ['./form-group.component.scss']\n})\nexport class FormGroupComponent implements OnInit {\n  @Input() heading: string;\n  @Input() columns = 2;\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  public get columnsTemplate(): string {\n    return `repeat(${this.columns}, 1fr)`;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": ".form-group {\n  display: grid;\n  grid-column-gap: 24px;\n  grid-row-gap: 24px;\n}\n\nlegend {\n  font-family: \"SF Pro Display\", Helvetica, Arial, sans-serif;\n  font-style: normal;\n  font-weight: 600;\n  font-size: 18px;\n  line-height: 21px;\n\n  color: #000000;\n\n  margin-bottom: 24px;\n}\n",
                     "styleUrl": "./form-group.component.scss"
                 }
             ],
@@ -210,12 +266,23 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 8
+                "line": 10
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>form-group works!</p>\n"
+            "accessors": {
+                "columnsTemplate": {
+                    "name": "columnsTemplate",
+                    "getSignature": {
+                        "name": "columnsTemplate",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 17
+                    }
+                }
+            },
+            "templateData": "<legend>{{ heading }}</legend>\n<div class=\"form-group\" [ngStyle]=\"{'grid-template-columns': columnsTemplate}\">\n  <ng-content></ng-content>\n</div>\n"
         },
         {
             "name": "InputComponent",
@@ -313,6 +380,109 @@
                 }
             },
             "templateData": "<label>{{ label }}</label>\n<input #input [type]=\"type\" [placeholder]=\"placeholder\">\n"
+        },
+        {
+            "name": "LoginComponent",
+            "id": "component-LoginComponent-3b1b30972b5356a41f307cec58de60da",
+            "file": "src/app/login/login.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-login",
+            "styleUrls": [
+                "./login.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./login.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "login",
+                    "args": [
+                        {
+                            "name": "username",
+                            "type": "string"
+                        },
+                        {
+                            "name": "password",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "jsdoctags": [
+                        {
+                            "name": "username",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "password",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport {LoginService} from './login.service';\n\n@Component({\n  selector: 'app-login',\n  templateUrl: './login.component.html',\n  styleUrls: ['./login.component.scss']\n})\nexport class LoginComponent implements OnInit {\n\n  constructor(private readonly loginService: LoginService) {\n  }\n\n  login(username: string, password: string) {\n    this.loginService.login(username, password).subscribe(result => console.log(result));\n  }\n\n  ngOnInit() {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  background: #FFFFFF;\n  border: 1px solid #E4E8F3;\n  box-sizing: border-box;\n  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);\n  border-radius: 10px;\n\n  max-width: 500px;\n  margin: auto;\n  padding: 32px 24px 24px;\n}\n\n.submit {\n  margin: 24px 0 0 auto;\n}\n",
+                    "styleUrl": "./login.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "loginService",
+                        "type": "LoginService"
+                    }
+                ],
+                "line": 9,
+                "jsdoctags": [
+                    {
+                        "name": "loginService",
+                        "type": "LoginService",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-form-group [columns]=\"1\" heading=\"Login\">\n  <app-input #username label=\"Username\" placeholder=\"jon.doe@gmail.com\"></app-input>\n  <app-input #password label=\"Password\" placeholder=\"*********\" type=\"password\"></app-input>\n  <app-button label=\"Submit\" class=\"submit\" (click)=\"login(username.text, password.text)\"></app-button>\n</app-form-group>\n"
         }
     ],
     "modules": [
@@ -407,7 +577,11 @@
                 },
                 {
                     "type": "exports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "FormGroupComponent"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -431,6 +605,43 @@
                     "elements": [
                         {
                             "name": "InputComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "InputComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "LoginModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "LoginComponent"
                         }
                     ]
                 },
@@ -477,10 +688,18 @@
                 "subtype": "variable",
                 "file": "src/app/form-group/form-group.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\n  component: FormGroupComponent\n})"
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/login/login.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\n  component: LoginComponent\n})"
+            },
+            {
+                "name": "DefaultInput",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/input/input.stories.ts",
@@ -517,6 +736,14 @@
                 "file": "src/app/button/button.stories.ts",
                 "type": "",
                 "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/form-group/form-group.stories.ts",
+                "type": "",
+                "defaultValue": "(args) => ({\n  props: args,\n  template: `\n      <app-form-group [columns]=\"columns\" [heading]=\"heading\">\n        <app-input [label]=\"label\" [placeholder]=\"placeholder\"></app-input>\n        <app-input [label]=\"label\" [placeholder]=\"placeholder\" type=\"password\"></app-input>\n      </app-form-group>\n  `\n})"
             },
             {
                 "name": "Template",
@@ -573,12 +800,30 @@
                     "subtype": "variable",
                     "file": "src/app/form-group/form-group.stories.ts",
                     "type": "",
-                    "defaultValue": "() => ({\n  component: FormGroupComponent\n})"
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/form-group/form-group.stories.ts",
+                    "type": "",
+                    "defaultValue": "(args) => ({\n  props: args,\n  template: `\n      <app-form-group [columns]=\"columns\" [heading]=\"heading\">\n        <app-input [label]=\"label\" [placeholder]=\"placeholder\"></app-input>\n        <app-input [label]=\"label\" [placeholder]=\"placeholder\" type=\"password\"></app-input>\n      </app-form-group>\n  `\n})"
+                }
+            ],
+            "src/app/login/login.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/login/login.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n  component: LoginComponent\n})"
                 }
             ],
             "src/app/input/input.stories.ts": [
                 {
-                    "name": "Default",
+                    "name": "DefaultInput",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/input/input.stories.ts",
@@ -621,7 +866,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 4,
+        "count": 3,
         "status": "low",
         "files": [
             {
@@ -677,7 +922,7 @@
                 "linktype": "component",
                 "name": "FormGroupComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -686,6 +931,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/form-group/form-group.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -704,7 +959,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Default",
+                "name": "DefaultInput",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -715,6 +970,34 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/login/login.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LoginComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/login/login.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "LoginService",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/login/login.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

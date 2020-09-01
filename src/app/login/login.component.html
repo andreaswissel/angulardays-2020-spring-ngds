@@ -1,0 +1,5 @@
+<app-form-group [columns]="1" heading="Login">
+  <app-input #username label="Username" placeholder="jon.doe@gmail.com"></app-input>
+  <app-input #password label="Password" placeholder="*********" type="password"></app-input>
+  <app-button label="Submit" class="submit" (click)="login(username.text, password.text)"></app-button>
+</app-form-group>
